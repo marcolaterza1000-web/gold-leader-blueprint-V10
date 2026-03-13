@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 4%;
+    --foreground: 0 0% 94%;
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 94%;
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 94%;
+    --primary: 38 92% 50%;
+    --primary-foreground: 0 0% 4%;
+    --secondary: 0 0% 8%;
+    --secondary-foreground: 0 0% 94%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 50%;
+    --accent: 38 92% 50%;
+    --accent-foreground: 0 0% 4%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 94%;
+    --border: 0 0% 11%;
+    --input: 0 0% 11%;
+    --ring: 38 92% 50%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+    background-color: #0a0a0a;
+  }
+  h1, h2, h3, h4 { font-family: 'Inter', sans-serif; }
+  html { scroll-behavior: smooth; }
+}
+
+@layer utilities {
+  .font-inter { font-family: 'Inter', sans-serif; }
+
+  .text-amber { color: #f59e0b; }
+  .bg-amber { background-color: #f59e0b; }
+  .border-amber { border-color: #f59e0b; }
+
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #f59e0b, #fcd34d, #f59e0b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .shadow-amber { box-shadow: 0 0 30px rgba(245,158,11,0.2); }
+  .shadow-amber-lg { box-shadow: 0 8px 40px rgba(245,158,11,0.3); }
+
+  .glass-card {
+    background: rgba(255,255,255,0.03);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.07);
+  }
+
+  .glass-card-amber {
+    background: rgba(245,158,11,0.04);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(245,158,11,0.15);
+  }
+
+  .section-divider { border-top: 1px solid rgba(255,255,255,0.05); }
+}
+
+/* ── Scroll-reveal animations ─────────────────────────────── */
+@layer utilities {
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+  .reveal-delay-5 { transition-delay: 0.5s; }
+
+  /* Video card hover glow */
+  .video-card-glow:hover {
+    box-shadow: 0 8px 40px rgba(245,158,11,0.10), 0 0 0 1px rgba(245,158,11,0.18);
+  }
+
+  /* Gold line separator */
+  .gold-line {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(245,158,11,0.5), transparent);
+  }
+}
+
+/* ── V8 Quiet Luxury Enhancements ──────────────────────────── */
+@layer utilities {
+  /* CTA glow — primary action */
+  .cta-glow {
+    box-shadow: 0 4px 32px rgba(245,158,11,0.28), 0 0 0 1px rgba(245,158,11,0.15);
+  }
+  .cta-glow:hover {
+    box-shadow: 0 6px 40px rgba(245,158,11,0.38), 0 0 0 1px rgba(245,158,11,0.25);
+  }
+
+  /* Card hover lift */
+  .card-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+  .card-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+  }
+
+  /* Gold gradient text */
+  .text-gold-gradient {
+    background: linear-gradient(135deg, #f59e0b 0%, #fcd34d 50%, #f59e0b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Subtle ambient section bg */
+  .section-alt {
+    background: rgba(255,255,255,0.012);
+  }
+
+  /* Gold line separator */
+  .gold-line {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(245,158,11,0.4), transparent);
+  }
+
+  /* Video thumbnail glow on hover */
+  .video-card-glow:hover {
+    box-shadow: 0 8px 40px rgba(245,158,11,0.12), 0 0 0 1px rgba(245,158,11,0.20);
+  }
+}
